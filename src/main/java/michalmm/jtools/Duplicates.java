@@ -1,3 +1,5 @@
+package michalmm.jtools;
+
 import java.io.File;
 import java.io.IOError;
 import java.nio.file.Path;
