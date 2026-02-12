@@ -1,6 +1,8 @@
 import java.io.File;
+import java.io.IOError;
 import java.nio.file.Path;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -14,6 +16,12 @@ public class Duplicates {
 
         var varName = args[0];
         var envWithDuplicates = System.getenv(varName);
+
+        if (envWithDuplicates == null || envWithDuplicates.isEmpty()) {
+            System.err.println("Env variable empty or incorrect name");
+            System.err.println("Make sure to pass just the variable name without % or $ chars");
+            System.exit(1);
+        }
 
         var uniqueEnvValue = Stream.of(envWithDuplicates.split(File.pathSeparator))
             .filter(path -> !path.isEmpty())
