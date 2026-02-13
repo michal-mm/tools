@@ -1,10 +1,7 @@
 package michalmm.jtools;
 
 import java.io.File;
-import java.io.IOError;
 import java.nio.file.Path;
-import java.util.LinkedHashSet;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
