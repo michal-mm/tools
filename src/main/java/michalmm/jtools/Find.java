@@ -17,14 +17,14 @@ public class Find {
         }
 
         var searchTerm = args[0];
-        var currentPath = Paths.get("").toAbsolutePath();
+        var currentPath = Paths.get("");
 
         try (var paths = Files.walk(currentPath)) {
             paths.filter(path -> matches(path, searchTerm))
-                 .map(Path::normalize)
-                 .map(Path::toString)
-                 .map(pathStr -> highlight(pathStr, searchTerm))
-                 .forEach(System.out::println);
+                    .map(Path::normalize)
+                    .map(Path::toString)
+                    .map(pathStr -> highlight(pathStr, searchTerm))
+                    .forEach(System.out::println);
         } catch (IOException e) {
             System.err.println("Error during file search: " + e.getMessage());
         }
