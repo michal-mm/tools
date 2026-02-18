@@ -10,7 +10,7 @@ public class Find {
     private static final String YELLOW = "\033[38;5;220m";
     private static final String RESET = "\u001B[0m";
 
-    public static void main(String[] args) {
+    void main(String[] args) {
         if (args.length != 1) {
             System.err.println("Usage: java Find <searchTerm>");
             System.exit(1);
@@ -31,11 +31,12 @@ public class Find {
     }
 
     private static boolean matches(Path path, String searchTerm) {
-        return path.toString().toLowerCase().contains(searchTerm.toLowerCase());
+        return Pattern.compile(searchTerm, Pattern.CASE_INSENSITIVE).matcher(path.toString()).find();
     }
 
     private static String highlight(String text, String searchTerm) {
-        return text.replaceAll("(?i)(" + Pattern.quote(searchTerm) + ")", 
-                               YELLOW + "$1" + RESET);
+        return Pattern.compile(searchTerm, Pattern.CASE_INSENSITIVE)
+                .matcher(text)
+                .replaceAll(YELLOW + "$0" + RESET);
     }
 }
