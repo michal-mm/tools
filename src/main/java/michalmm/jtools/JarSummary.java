@@ -1,8 +1,6 @@
 package michalmm.jtools;
 
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 public class JarSummary {
@@ -22,9 +20,9 @@ public class JarSummary {
                     .filter(jarEntry -> jarEntry.getSize() > 0)
                     .forEach(jarEntry ->
                             IO.println(jarEntry.getName() + " size: " +
-                                    Colors.format(Colors.ColorEnum.BRIGHT_RED, jarEntry.getSize()) +
+                                    Colors.format(Colors.ColorEnum.BRIGHT_RED, String.valueOf(jarEntry.getSize())) +
                                     " compressed size:[" +
-                                    Colors.format(Colors.ColorEnum.BRIGHT_YELLOW,jarEntry.getCompressedSize())
+                                    Colors.format(Colors.ColorEnum.BRIGHT_YELLOW, String.valueOf(jarEntry.getCompressedSize()))
                                     + "]"));
 
         } catch (IOException e) {
