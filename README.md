@@ -6,6 +6,7 @@ These tools are operating system independent and work on macOS, Linux, and Windo
 
 ## Tools
 
+- **DateAndTime** - Print current date and time to STDOUT (no time zone, just simple yyyy-MM-dd HH:mm:ss)
 - **Duplicates** - Remove duplicate entries from PATH or any other colon/semicolon-separated environment variable
 - **Find** - Search for files and directories by name (regex allowed) with highlighted results
 
