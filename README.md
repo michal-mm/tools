@@ -12,7 +12,7 @@ These tools are operating system independent and work on macOS, Linux, and Windo
 
 ## Usage
 
-Run any tool directly with Java:
+Run any tool directly with Java (you need Java 25 or later):
 
 ```bash
 java src/main/java/michalmm/jtools/Find.java <searchTerm>
