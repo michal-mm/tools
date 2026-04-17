@@ -9,7 +9,7 @@ public class Duplicates {
     
     void main(String[] args) {
         if (args.length != 1) {
-            System.err.println("Usage: java Duplicates <env_variable>");
+            System.err.println("Usage: java25 Duplicates <env_variable>");
             System.exit(1);
         }
 
