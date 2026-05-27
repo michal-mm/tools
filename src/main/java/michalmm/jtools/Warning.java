@@ -29,6 +29,7 @@ public class Warning {
                     screenBounds.x + screenBounds.width / 2,
                     screenBounds.y + screenBounds.height / 2
             );
+            frame.setAlwaysOnTop(true);
             frame.setVisible(true);
 
             JOptionPane.showMessageDialog(
