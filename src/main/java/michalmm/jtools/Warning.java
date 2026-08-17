@@ -8,7 +8,7 @@ public class Warning {
     void main (String[] args) {
         String warningMessage = """
                 This is ground control to major Tom
-                Can you hear me, major Tom?!? 
+                Can you hear me, major Tom?!?
                 """;
 
         showWarnMessage(warningMessage);
