@@ -11,10 +11,14 @@ public class Warning {
                 Can you hear me, major Tom?!?
                 """;
 
-        showWarnMessage(warningMessage);
+        if (args.length == 0) {
+            showWarnMessage(warningMessage, "--- Tunnel Broken ---");
+        } else {
+            showWarnMessage(String.join("\n", args), "--- WARNING ---");
+        }
     }
 
-    private static void showWarnMessage (String message) {
+    private static void showWarnMessage (String message, String title) {
         SwingUtilities.invokeLater(() -> {
             GraphicsConfiguration gc = getActiveScreenConfig();
 
@@ -35,7 +39,7 @@ public class Warning {
             JOptionPane.showMessageDialog(
                     frame,
                     message,
-                    "Tunnel Broken",
+                    title,
                     JOptionPane.ERROR_MESSAGE
             );
 
